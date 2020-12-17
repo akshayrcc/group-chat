@@ -1,0 +1,19 @@
+* {
+	background-color: #d1cfef;
+}
+
+h1 {
+	color: orange;
+	text-align: center;
+}
+
+p {
+	font-family: verdana;
+	font-size: 20px;
+}
+
+.chat-table {
+	color: maroon;
+	margin-left: 40px;
+	width:50%
+}

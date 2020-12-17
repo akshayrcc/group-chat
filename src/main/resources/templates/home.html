@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+<title>HomePage</title>
+</head>
+<body>
+	<h1 align="center" style="color: blue">Welcome to The HomePage !</h1>
+
+	<!-- <h2>TimeStamp:</h2>
+	<h2 align="center" style="color: orange" th:text="${welcomeMessage}">
+		test</h2> -->
+
+	<!-- <form action="#" th:action="@{'/simplehome'}" method="POST">
+		<input type="submit" value="Visit me">
+	</form> -->
+
+	<form th:object="${newMessage}" th:action="@{'/home'}" action="#" method="POST">
+		<input th:field="*{text}" type="text">
+		<input type="submit">
+	</form>
+
+	<h3 align="center" th:each="msg: ${greetings}" th:unless="${msg.contains('GoodBye')}" th:text="${msg}"></h3>
+
+	<form action="#" enctype="multipart/form-data" th:action="@{/file-upload}" method="POST">
+		<input type="file" class="form-control-file" id="fileUpload" name="fileUpload"> 
+		<input type="submit">
+	</form>
+</body>
+</html>
