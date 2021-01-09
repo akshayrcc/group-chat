@@ -16,9 +16,9 @@ public class MessageService {
 	private String message;
 	private List<ChatMessage> chatMsglist;
 	
-	public MessageService(String message) {
-		this.message = message;
-	}
+//	public MessageService(String message) {
+//		this.message = message;
+//	}
 	
 	@PostConstruct
 	public void postConstruct() {

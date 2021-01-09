@@ -9,7 +9,7 @@
 		<version>2.4.1-SNAPSHOT</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.udacity.jwdnd.c1</groupId>
+	<groupId>com.udacity</groupId>
 	<artifactId>review</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>course1</name>
@@ -20,16 +20,21 @@
 	</properties>
 
 	<dependencies>
-		<!-- <dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-security</artifactId> 
-			</dependency> -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+
 		<dependency>
 			<groupId>org.mybatis.spring.boot</groupId>
 			<artifactId>mybatis-spring-boot-starter</artifactId>
@@ -39,6 +44,12 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-jdbc</artifactId>
+		</dependency>
+
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-jdbc</artifactId>
+		    <!-- <version>3.0.3.RELEASE</version> -->
 		</dependency>
 
 		<!-- <dependency> <groupId>org.thymeleaf.extras</groupId> <artifactId>thymeleaf-extras-springsecurity5</artifactId> 
@@ -63,10 +74,21 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.junit.vintage</groupId>
+					<artifactId>junit-vintage-engine</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
-		<!-- <dependency> <groupId>org.springframework.security</groupId> <artifactId>spring-security-test</artifactId> 
-			<scope>test</scope> </dependency> -->
+
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-test</artifactId>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
+
 	<build>
 		<plugins>
 			<plugin>
