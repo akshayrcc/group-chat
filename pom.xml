@@ -12,7 +12,7 @@
 	<groupId>com.udacity</groupId>
 	<artifactId>review</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>course1</name>
+	<name>chat-application</name>
 	<description>Spring Boot Project 001</description>
 
 	<properties>

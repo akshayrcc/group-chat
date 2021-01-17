@@ -70,14 +70,12 @@ class ReviewApplicationTests {
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
 		ChatPage chatPage = new ChatPage(driver);
-		chatPage.sendChatMessage(messageText);
-
+		chatPage.sendChatMessage(username, messageText);
 
 		ChatMessage sentMessage = chatPage.getFirstMessage();
 
 		// assertEquals(username, sentMessage.getUsername());
-		System.out.println(msgFinal);
-		System.out.println(sentMessage.getMessage());
+
 		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 		assertEquals(msgFinal, sentMessage.getMessage());
 

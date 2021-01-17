@@ -9,30 +9,34 @@ import com.udacity.mvc.model.ChatMessage;
 
 public class ChatPage {
 
+	@FindBy(id="username")
+    private WebElement username;
+	
     @FindBy(id="messageText")
     private WebElement textField;
 
     @FindBy(id="submitMessage")
     private WebElement submitButton;
 
-    @FindBy(className = "chatMessageUsername")
-    private WebElement firstMessageUsername;
-
-    @FindBy(className = "chatMessageText")
-    private WebElement firstMessageText;
+//    @FindBy(className = "chatMessageUsername")
+//    private WebElement firstMessageUsername;
+//
+//    @FindBy(className = "chatMessageText")
+//    private WebElement firstMessageText;
 
     public ChatPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
 
-    public void sendChatMessage(String text) {
+    public void sendChatMessage(String username,String text) {
+    	this.username.sendKeys(username);
         this.textField.sendKeys(text);
         this.submitButton.click();
     }
 
     public ChatMessage getFirstMessage() {
         ChatMessage result = new ChatMessage();
-        result.setMessage(firstMessageUsername.getText(),firstMessageText.getText());
+        result.setMessage(username.getText(),textField.getText());
         return result;
     }
 
