@@ -2,6 +2,7 @@ package com.udacity.mvc.service;
 
 import java.util.ArrayList;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -13,13 +14,16 @@ import com.udacity.mvc.model.User;
 
 @Service
 public class AuthenticationService implements AuthenticationProvider {
+	
+	@Autowired
     private UserMapper userMapper;
+	@Autowired
     private HashService hashService;
 
-    public AuthenticationService(UserMapper userMapper, HashService hashService) {
-        this.userMapper = userMapper;
-        this.hashService = hashService;
-    }
+//    public AuthenticationService(UserMapper userMapper, HashService hashService) {
+//        this.userMapper = userMapper;
+//        this.hashService = hashService;
+//    }
 
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {

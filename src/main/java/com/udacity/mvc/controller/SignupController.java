@@ -1,7 +1,6 @@
 package com.udacity.mvc.controller;
 
-import com.udacity.mvc.model.User;
-import com.udacity.mvc.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,15 +8,20 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.udacity.mvc.model.User;
+import com.udacity.mvc.service.UserService;
+
 @Controller()
 @RequestMapping("/signup")
 public class SignupController {
 
-    private final UserService userService;
+	@Autowired
+    //private final UserService userService;
+	private UserService userService;
 
-    public SignupController(UserService userService) {
-        this.userService = userService;
-    }
+//    public SignupController(UserService userService) {
+//        this.userService = userService;
+//    }
 
     @GetMapping()
     public String signupView() {

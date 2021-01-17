@@ -1,5 +1,6 @@
 package com.udacity.mvc.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,11 +16,12 @@ import com.udacity.mvc.service.MessageListService;
 @Controller
 public class HomeController {
 
+	@Autowired
 	private MessageListService messageListService;
 
-	public HomeController(MessageListService messageListService) {
-		this.messageListService = messageListService;
-	}
+//	public HomeController(MessageListService messageListService) {
+//		this.messageListService = messageListService;
+//	}
 
 	@GetMapping("/home")
 	public String getHomePage(@ModelAttribute("newMessage") MessageForm messageForm, Model model) {

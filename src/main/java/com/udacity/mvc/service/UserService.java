@@ -1,22 +1,26 @@
 package com.udacity.mvc.service;
 
-import com.udacity.mvc.mapper.UserMapper;
-import com.udacity.mvc.model.User;
-import org.springframework.stereotype.Service;
-
 import java.security.SecureRandom;
 import java.util.Base64;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.udacity.mvc.mapper.UserMapper;
+import com.udacity.mvc.model.User;
 
 @Service
 public class UserService {
 
-    private final UserMapper userMapper;
-    private final HashService hashService;
+	@Autowired
+    private UserMapper userMapper;
+	@Autowired
+	private HashService hashService;
 
-    public UserService(UserMapper userMapper, HashService hashService) {
-        this.userMapper = userMapper;
-        this.hashService = hashService;
-    }
+//    public UserService(UserMapper userMapper, HashService hashService) {
+//        this.userMapper = userMapper;
+//        this.hashService = hashService;
+//    }
 
     public boolean isUsernameAvailable(String username) {
         return userMapper.getUser(username) == null;
