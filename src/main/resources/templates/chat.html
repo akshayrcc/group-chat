@@ -20,7 +20,7 @@
 		<select	id="messageType" th:field="*{messageType}">
 			<option th:each="type : ${allMsgTypes}" th:value="${type}" th:text="${type}">Say</option>
 		</select>
-	<input type="submit">
+	<input id="submitMessage" type="submit">
 	</form>
 	
 	<div>

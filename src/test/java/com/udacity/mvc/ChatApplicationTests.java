@@ -18,7 +18,7 @@ import com.udacity.mvc.model.ChatMessage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class ReviewApplicationTests {
+class ChatApplicationTests {
 
 	@LocalServerPort
 	public int port;
