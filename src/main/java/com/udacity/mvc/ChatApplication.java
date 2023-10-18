@@ -5,9 +5,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 @SpringBootApplication
-public class ReviewApplication {
+public class ChatApplication {
     public static void main(String[] args) {
-        SpringApplication.run(ReviewApplication.class, args);
+        SpringApplication.run(ChatApplication.class, args);
     }
 
    /* @Bean
